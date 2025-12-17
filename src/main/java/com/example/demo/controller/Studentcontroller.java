@@ -24,5 +24,11 @@ public class Studentcontroller {
         return service.getAllStudents();
     }
     @GetMapping("/get/{id}")
-    public Optional<Studententity> get(@)
+    public Optional<Studententity> get(@PathVariable int id){
+        return service.getOneStudent();
+    }
+    @PutMapping("/update/{id}")
+    public String update (@PathVariable int id , @RequestBody Studententity newStudent){
+        Optional<
+    }
 }
