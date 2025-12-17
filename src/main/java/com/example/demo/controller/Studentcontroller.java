@@ -38,6 +38,7 @@ public class Studentcontroller {
     }
     @DeleteMapping("/del/{id}")
     public String deleteStudent(@PathVariable int id){
-        Optional <Studen
+        Optional <Studententity> student = service.deleteStudent(id);
+        if 
     }
 }
