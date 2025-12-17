@@ -1,4 +1,4 @@
-package.com.example.demo.controller;
+package com.example.demo.controller;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.Student;
-import cpm.example.demo.service.Studentservice;
+import com.example.demo.service.Studentservice;
 @RestController
 public class Studentcontroller {
     @Autowired
-    Studentservice service
+    Studentservice service ;
 
     @PostMapping("/add")
     public Student post(@RequestBody Student st){
@@ -27,7 +27,7 @@ public class Studentcontroller {
     }
     @GetMapping("/get/{id}")
     public Optional<Student> get(@PathVariable int id){
-        return service.getOneStudent();
+        return service.getOneStudent(id);
     }
     @PutMapping("/update/{id}")
     public String update (@PathVariable int id , @RequestBody Student newStudent){
@@ -37,7 +37,7 @@ public class Studentcontroller {
           service.insertStudent(newStudent);
           return "Updated successfully";
         }
-        return "Id not found"';
+        return "Id not found";
     }
     @DeleteMapping("/del/{id}")
     public String deleteStudent(@PathVariable int id){
