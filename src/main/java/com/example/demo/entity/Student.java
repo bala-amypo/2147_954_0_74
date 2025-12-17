@@ -8,17 +8,15 @@ import jakarta.persistence.GenerationType;
 @Entity
 public class Student {
 
-    @ID
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
     private String course;
 
-    // REQUIRED: no-arg constructor
     public Student() {}
 
-    // getters & setters
     public Integer getId() {
         return id;
     }
