@@ -29,6 +29,7 @@ public class Studentcontroller {
     }
     @PutMapping("/update/{id}")
     public String update (@PathVariable int id , @RequestBody Studententity newStudent){
-        Optional<
+        Optional<Studententity> student = service.getOneStudent(id);
+        service.insertStudent
     }
 }
