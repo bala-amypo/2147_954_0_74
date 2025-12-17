@@ -14,6 +14,11 @@ public class Studentserviceimpl implements Studentservice{
     }
     @Override
     public List<Student>getAllStudents(){
-        st.
+        return new ArrayList<>(store.values());
     }
+    @Override
+    public Optional<Student> getOneStudent(Long id){
+        return Optional.ofNullable(store.get(id));
+    }
+    @Override
 }
