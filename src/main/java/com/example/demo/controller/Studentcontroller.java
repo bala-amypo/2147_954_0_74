@@ -15,5 +15,10 @@ public class Studentcontroller {
     Studentservice service
 
     @PostMapping("/add")
-    public Studententity 
+    public Studententity post(@RequestBody Studententity st){
+        return service.savedata(st);
+    }
+
+    @GetMapping("/getAll")
+    
 }
