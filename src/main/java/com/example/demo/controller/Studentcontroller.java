@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.demo.entity.Student;
-import org.springframework.
+import com.example.demo.entity.Student;
+import cpm.example.demo.service.Studentservice;
 @RestController
 public class Studentcontroller {
     @Autowired
@@ -33,6 +33,7 @@ public class Studentcontroller {
     public String update (@PathVariable int id , @RequestBody Student newStudent){
         Optional<Student> student = service.getOneStudent(id);
         if(student.isPresent()){
+            newStudent.setId(id);
           service.insertStudent(newStudent);
           return "Updated successfully";
         }
