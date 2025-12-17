@@ -9,6 +9,11 @@ public class Studentserviceimpl implements Studentservice{
     @Override
     public Student insertStudent(Student st){
         st.setId(counter++);
-        store.put(st.get())
+        store.put(st.get(),st);
+        return st;
+    }
+    @Override
+    public List<Student>getAllStudents(){
+        st.
     }
 }
