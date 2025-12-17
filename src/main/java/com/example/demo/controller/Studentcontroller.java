@@ -30,6 +30,11 @@ public class Studentcontroller {
     @PutMapping("/update/{id}")
     public String update (@PathVariable int id , @RequestBody Studententity newStudent){
         Optional<Studententity> student = service.getOneStudent(id);
-        service.insertStudent
+        if(student.isPresent()){
+          service.insertStudent(newStudent);
+          return "Updated successfully";
+        }
+        return "Id not found"';
     }
+    
 }
