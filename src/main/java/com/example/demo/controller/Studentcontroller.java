@@ -36,5 +36,8 @@ public class Studentcontroller {
         }
         return "Id not found"';
     }
-    
+    @DeleteMapping("/del/{id}")
+    public String deleteStudent(@PathVariable int id){
+        Optional <Studen
+    }
 }
