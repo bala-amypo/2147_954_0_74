@@ -8,28 +8,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;+++
+import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Studentcontroller {
     @Autowired
     Studentservice service
 
     @PostMapping("/add")
-    public Studententity post(@RequestBody Studententity st){
+    public Student post(@RequestBody Student st){
         return service.savedata(st);
     }
 
     @GetMapping("/getAll")
-    public List<Studententity>getAll(){
+    public List<Student>getAll(){
         return service.getAllStudents();
     }
     @GetMapping("/get/{id}")
-    public Optional<Studententity> get(@PathVariable int id){
+    public Optional<Student> get(@PathVariable int id){
         return service.getOneStudent();
     }
     @PutMapping("/update/{id}")
-    public String update (@PathVariable int id , @RequestBody Studententity newStudent){
-        Optional<Studententity> student = service.getOneStudent(id);
+    public String update (@PathVariable int id , @RequestBody Student newStudent){
+        Optional<Student> student = service.getOneStudent(id);
         if(student.isPresent()){
           service.insertStudent(newStudent);
           return "Updated successfully";
@@ -38,7 +38,7 @@ public class Studentcontroller {
     }
     @DeleteMapping("/del/{id}")
     public String deleteStudent(@PathVariable int id){
-        Optional <Studententity> student = service.deleteStudent(id);
+        Optional <Student> student = service.deleteStudent(id);
         if (student.isPresent()){
           service.deleteStudent(id);
           return "Deleted successfully";
