@@ -1,15 +1,18 @@
 package com.example.demo.entity;
 
-public class Userentity {
+public class User {
 
     private Long id;
     private String name;
     private String email;
     private String password;
     private String role;
-    public User() {
 
+    // Default constructor
+    public User() {
     }
+
+    // Parameterized constructor
     public User(Long id, String name, String email, String password, String role) {
         this.id = id;
         this.name = name;
@@ -17,6 +20,8 @@ public class Userentity {
         this.password = password;
         this.role = role;
     }
+
+    // Getters and setters
     public Long getId() {
         return id;
     }
