@@ -7,10 +7,9 @@ public class User {
     private String email;
     private String password;
     private String role;
+    public User() {
 
-    // Constructors
-    public User() {}
-
+    }
     public User(Long id, String name, String email, String password, String role) {
         this.id = id;
         this.name = name;
@@ -18,8 +17,6 @@ public class User {
         this.password = password;
         this.role = role;
     }
-
-    // Getters and Setters
     public Long getId() {
         return id;
     }
