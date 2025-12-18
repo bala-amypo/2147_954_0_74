@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-public class User {
+public class Userentity {
 
     private Long id;
     private String name;
